@@ -61,28 +61,30 @@ Descriptive statistics and sampling basics used throughout ML.
 
 
 # EXPRIMENT 2
-heights = np.array ([160,165,170,175,180,185,190,195,200,155])
-s= pd.Series(heights)
-print("Mean:",s.mean())
-print("Median:",s.median())
+import numpy as np
+import pandas as pd
+heights = np.array([160,165,170,180,155,168,172,169,158])
+s = pd.Series(heights)
+print("Mean:", s.mean())
+print("Median:", s.median())
 print("Std dev:", round(s.std(),3))
-print("variance:", round(s.var(),3))
-print("p(height>170):", (s>170).mean())
-sample = np.random.normal(loc=s.mean(), scale=s.std(),size=10)
-print("Random sample (10) from normal around mean:",
-      np.round(sample,2))
+print("Variance:", round(s.var(),3))
+print("P(height> 170):", (s>170).mean())
+sample = np.random.normal(loc=s.mean(), scale=s.std(), size=10)
+print("Random sample (10) from normal around mean:", np.round(sample,2))
 
 
 
 ## OUTPUT :
 
 
-Mean: 177.5
-Median: 177.5
-Std dev: 15.138
-variance: 229.167
-p(height>170): 0.6
-Random sample (10) from normal around mean: [202.64 175.73 174.6  171.51 156.69 173.43 141.37 203.69 161.59 187.57]
+Mean: 166.33333333333334
+Median: 168.0
+Std dev: 7.762
+Variance: 60.25
+P(height> 170): 0.2222222222222222
+Random sample (10) from normal around mean: [176.88 166.19 164.79 167.15 159.1  175.4  172.78 170.16 162.91 159.06]
+
 
 
 ```
